@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Recenzije | Caffe Franšiza</title>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#220b01",
+                        "primary-container": "#3b1f0e",
+                        secondary: "#7d5700",
+                        "secondary-container": "#fdc664",
+                        background: "#fff8f5",
+                        surface: "#fff8f5",
+                        "surface-container": "#fdeadf",
+                        "surface-container-low": "#fff1e9",
+                        "surface-container-high": "#f7e5d9",
+                        "surface-container-highest": "#f1dfd4",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#231a13",
+                        "on-surface-variant": "#50443e",
+                        outline: "#82746d",
+                        "outline-variant": "#d4c3bb",
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Shared Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+    <!-- Texture Overlay -->
+    <div class="fixed inset-0 texture-overlay z-40"></div>
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 dark:bg-[#1A0F07]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 shadow-sm dark:shadow-none transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-12 w-auto">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-6 w-auto ml-1 bg-black p-0.5 rounded-sm">
+            </a>
+                                                <div class="hidden md:flex gap-8 items-center">
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="recenzije.html">RECENZIJE</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            </div>
+            <div class="hidden md:flex items-center gap-3">
+                    <a href="recenzije.html" class="text-xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                    <a href="recenzije-en.html" class="text-xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                    <a href="recenzije-de.html" class="text-xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+                </div>
+                        <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E] dark:text-[#EAE0D5]">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] dark:bg-[#1A0F07] border-t border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 px-8 py-6 space-y-4">
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="recenzije.html">RECENZIJE</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            <div class="flex items-center justify-center gap-3 py-4 border-t border-outline-variant/20">
+                    <a href="recenzije.html" class="text-2xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                    <a href="recenzije-en.html" class="text-2xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                    <a href="recenzije-de.html" class="text-2xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+                </div>
+        </div>
+    </nav>
+
+        
+
+    <!-- Header Section -->
+    <header class="relative h-[50vh] flex items-center justify-center overflow-hidden pt-[96px]">
+        <div class="absolute inset-0 z-0">
+            <img alt="Cafe ambient light" class="w-full h-full object-cover opacity-60 grayscale-[10%] scale-105" src="https://lh3.googleusercontent.com/aida/ADBb0ug2CuCJ1E2qwiD-hnPG9MHX1eULi66eSX9qj6r1dqnUV_efngnUvMIpXXaixcKSP8B6-Quc903o-52Bz9bdOzlPgRPI9DHeptGqHF1dqV4Ko507E8vvm5ze9iuzut0b36q-E_zKLiDlLvb20ESFyFLO5UeEfM5h2cobolmDNlO1VDjSV5RnPQ3WVRePLx_pTSSZNPJTZYijbDpOhnSP5mg3hBDcDgEOMuWFoU5F1imh1OjgW9do_Tu_aADF3PPpWRalYTOGMU1oV-s"/>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface/90"></div>
+        </div>
+        <div class="relative z-10 text-center px-8 max-w-4xl">
+            <h1 class="font-serif text-4xl md:text-6xl text-primary font-bold mb-4">Utisci naših gostiju</h1>
+            <p class="font-body-lg text-lg md:text-xl text-on-surface-variant font-light">Šta kažu oni koji nas posete.</p>
+        </div>
+    </header>
+
+    <!-- Google & TripAdvisor Badges Section -->
+    <section class="py-12 px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-y border-outline-variant py-8">
+            <div class="flex items-center justify-center gap-6 border-r-0 md:border-r border-outline-variant">
+                <div class="flex flex-col items-center">
+                    <span class="font-label-caps text-label-caps text-on-surface-variant mb-2">GOOGLE RECENZIJE</span>
+                    <div class="flex items-center gap-3">
+                        <span class="font-serif text-3xl font-bold text-primary">4.6</span>
+                        <div class="flex text-secondary">
+                            <span class="material-symbols-outlined icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-filled">star</span>
+                            <span class="material-symbols-outlined icon-half-filled">star_half</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center gap-6">
+                <div class="flex flex-col items-center">
+                    <span class="font-label-caps text-label-caps text-on-surface-variant mb-2">TRIPADVISOR</span>
+                    <div class="flex items-center gap-3">
+                        <span class="font-serif text-3xl font-bold text-primary">4.5</span>
+                        <div class="flex text-[#34E0A1]"> <!-- TripAdvisor Green -->
+                            <span class="material-symbols-outlined icon-filled">circle</span>
+                            <span class="material-symbols-outlined icon-filled">circle</span>
+                            <span class="material-symbols-outlined icon-filled">circle</span>
+                            <span class="material-symbols-outlined icon-filled">circle</span>
+                            <span class="material-symbols-outlined icon-half-filled">circle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masonry Grid Reviews -->
+    <section class="py-16 px-8 max-w-7xl mx-auto">
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+            <!-- Review Card 1 -->
+            <div class="break-inside-avoid bg-surface-container-low p-6 shadow-sm border border-outline-variant/30 relative group rounded-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="h-12 w-12 rounded-full overflow-hidden border border-outline bg-surface-variant">
+                        <img alt="Jelena Petrović" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANuftiYhs73MPYvxCUrFOk2pQCT21XTa2jceyvDcotXk5SsOU7SpbnveviYxhoD3H9wk_3SqWJ7cSOZzCO3hf3RbxEl4UWh9S4oI6kcfeBaQP053L0R32rQmfVEFh6Oi2xiEJSxWCYGxoMEdJIaXYapJIAkkAyv136nL1rky6kyKL-p0zoYMGgoFrRlyvKVkm-VF7UN9FZ7H-rsid6Hcn6IY3S7V-Fj_wnsyKcaQXnfOHI1Boji2G_4hX931NPxmMSoNALi-Cbik-X"/>
+                    </div>
+                    <div class="flex text-secondary">
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                    </div>
+                </div>
+                <p class="font-body-md text-base text-on-surface italic mb-4 leading-relaxed">"Najbolji espreso u gradu. Atmosfera je toliko prijatna da često ovde provodim celo popodne čitajući."</p>
+                <span class="font-label-caps text-label-caps text-primary font-semibold">— JELENA PETROVIĆ</span>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="break-inside-avoid bg-surface-container-low p-6 shadow-sm border border-outline-variant/30 rounded-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="h-12 w-12 rounded-full overflow-hidden border border-outline bg-surface-variant">
+                        <img alt="Marko Kostić" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9iFJUaGCbOzy0bjMeQmfb2ADMcSA02zB0zKc684gyp4SDd-O_yNxLieSHXXIBKo0wHVpnsx-VmvRNT5mByeZ1In96Rgn41KlP0dol2OZDALDxJrYK-CA_bfNdYsWaq-SCrgEzVmlruYo0hp0153Z-LVQyWuxtnSdNKjEhciTLBRSE7Ut98aZCQEzPg0zMdMpdbGL9AhsIgSUB-zI6txUA7sj8eG17slk9WBIzbmmm--FH94mg9CFqUrwDYBSvk1sojM7NYgAtsrnK"/>
+                    </div>
+                    <div class="flex text-secondary">
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                    </div>
+                </div>
+                <p class="font-body-md text-base text-on-surface italic mb-4 leading-relaxed">"Savršeno mesto za poslovne sastanke. Usluga je na vrhunskom nivou, a kafa je dosledno odlična."</p>
+                <span class="font-label-caps text-label-caps text-primary font-semibold">— MARKO KOSTIĆ</span>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="break-inside-avoid bg-surface-container-low p-6 shadow-sm border border-outline-variant/30 rounded-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="h-12 w-12 rounded-full overflow-hidden border border-outline">
+                        <img alt="Dragan Nikolić" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDSUk2mi5Nuq4c7AIGnvHmSCh9A-ua4e-SyUu-HWAOKJ_BdGLd1NRIMg9whiSb023U1weGdYE-fhjyHa7fwcgLwchCbuUE33Khpw8t6p-Z43z5G9Mrm2-23eDK_B2QfO-gLBuU_z8EAHb0-ChXTCsD1-_LmLsRKKdytLN-AI7aaRIIz3j3YsJTmi706k6iJzuxaolJzGkBFz0OvZ-yCvT80sVKl3IwEgIRCFpLYERJZscEDfv7mp11mfzTj_Gu7qM-GHcMV2H5BSdn"/>
+                    </div>
+                    <div class="flex text-secondary">
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                    </div>
+                </div>
+                <p class="font-body-md text-base text-on-surface italic mb-4 leading-relaxed">"Autentičan duh starog Beograda u modernom ruhu. Svaka preporuka za selekciju peciva."</p>
+                <span class="font-label-caps text-label-caps text-primary font-semibold">— DRAGAN NIKOLIĆ</span>
+            </div>
+
+            <!-- Review Card 4 -->
+            <div class="break-inside-avoid bg-surface-container-low p-6 shadow-sm border border-outline-variant/30 rounded-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="h-12 w-12 rounded-full overflow-hidden border border-outline bg-surface-variant">
+                        <img alt="Ana Stojić" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJQVh72uF5TANADpRY-Z6X31mblHG-46vwkI6X7Dz9rKFpZXNrSNOdD7wZC7-ebTQd3WXT0MleLGZjgI2Fdxq5RL3JXRwzRZueEFUIYoE_jEMZXQ25aiPjWqBapYY506mJNTl3DW1kCzD3C9anN3uXAVwZf64Eq3UztQhaIJGehSbUNeMbjn7SyqSuaA49cz3tCMBd104Xbb0HRG5rMpJiamERde9Mjvt3QDTxLgxrvO7oYY5utAKvItWAski7IdBlx2WU1q2wOqwJ"/>
+                    </div>
+                    <div class="flex text-secondary">
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                    </div>
+                </div>
+                <p class="font-body-md text-base text-on-surface italic mb-4 leading-relaxed">"Prelepo uređen enterijer i izuzetno ljubazno osoblje. Osećate se kao kod kuće od trenutka kada zakoračite unutra."</p>
+                <span class="font-label-caps text-label-caps text-primary font-semibold">— ANA STOJIĆ</span>
+            </div>
+
+            <!-- Review Card 5 -->
+            <div class="break-inside-avoid bg-surface-container-low p-6 shadow-sm border border-outline-variant/30 rounded-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="h-12 w-12 rounded-full overflow-hidden border border-outline">
+                        <img alt="Stefan Ivić" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZTZVGsFbznRPaZTQf2BZPlrlataNQc8RwysYBnPEdZ_PgeCWWE_fTuu0LzIPE4SGVds2NRA3UqnGqpdR6X-XXUY0b23otUlWd1YiKsbwc_jsrCihxlqyWx789Sluqryc2oqX9lmXaUhXRBiWfIjc6RQQioHwRpvvMJmE8Umz6XWXHczSsGG26W58sTY-VOn6AtFsPvMUiW9eYipMvxysUWcO5YndSJiQtPaQBIG5CEzMUhwqvAiDG952lXscj4lh7L0vwHUwTn-SH"/>
+                    </div>
+                    <div class="flex text-secondary">
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                    </div>
+                </div>
+                <p class="font-body-md text-base text-on-surface italic mb-4 leading-relaxed">"Njihova specijalna mešavina kafe je nešto što se mora probati. Svaki detalj je pažljivo osmišljen, od šoljica do muzike u pozadini."</p>
+                <span class="font-label-caps text-label-caps text-primary font-semibold">— STEFAN IVIĆ</span>
+            </div>
+
+            <!-- Review Card 6 -->
+            <div class="break-inside-avoid bg-surface-container-low p-6 shadow-sm border border-outline-variant/30 rounded-sm">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="h-12 w-12 rounded-full overflow-hidden border border-outline bg-surface-variant">
+                        <img alt="Milica Vasić" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbYywXaxHTvxLBT2QF0TgTxf3Cwa4v0tnmZaSzosLxyRfzkjUwBRTk_Qgv-dyQlf-D-69raoAYbX46eT8IP2lbY0AXTMuBbTscuDdqFqBlTnGgoL_o1sU8EU86FCtlIuGbha00W6WoI12Q0moCKvoI5_B6vqmhljIiACi957N2zfz3vi9OpvM9E3BPeyJrzYxuzbyl-G984K2KiJi6LtQH64n63FgCumXPfjh9hCQ71vcwu-IJeWytYw_n0eNCh3JU530NghzCzsg4"/>
+                    </div>
+                    <div class="flex text-secondary">
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                        <span class="material-symbols-outlined icon-filled">star</span>
+                    </div>
+                </div>
+                <p class="font-body-md text-base text-on-surface italic mb-4 leading-relaxed">"Elegantno, mirno i uvek besprekorno čisto. Omiljeno mesto za doručak vikendom."</p>
+                <span class="font-label-caps text-label-caps text-primary font-semibold">— MILICA VASIĆ</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-surface-container py-24 px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-serif text-3xl md:text-4xl text-primary font-bold mb-4">Podelite vaše iskustvo</h2>
+            <p class="font-body-lg text-lg text-on-surface-variant mb-8 max-w-xl mx-auto leading-relaxed">Vaše mišljenje nam pomaže da budemo još bolji. Ostavite recenziju na vašoj omiljenoj platformi.</p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <button class="btn-premium flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all">
+                    <span class="material-symbols-outlined">reviews</span>
+                    RECENZIJA NA GOOGLE-U
+                </button>
+                <button class="btn-premium flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all">
+                    <span class="material-symbols-outlined">public</span>
+                    RECENZIJA NA TRIPADVISOR-U
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#3B1F0E] dark:bg-[#1A0F07] w-full py-16 px-8 border-t border-[#C5A059]/20 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-2 mb-4 justify-center md:justify-start">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-10 w-auto">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-5 w-auto ml-1 bg-black p-0.5 rounded-sm">
+                </div>
+                <p class="text-[#EAE0D5]/60 font-serif text-xs uppercase tracking-widest mt-2">© 2026 CAFFE FRANŠIZA BELGRADE. SVA PRAVA ZADRŽANA.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">INSTAGRAM</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">FACEBOOK</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">TRIPADVISOR</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>

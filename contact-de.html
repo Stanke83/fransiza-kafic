@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Kontakt | Caffe Franchise</title>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#220b01",
+                        "primary-container": "#3b1f0e",
+                        secondary: "#7d5700",
+                        "secondary-container": "#fdc664",
+                        background: "#fff8f5",
+                        surface: "#fff8f5",
+                        "surface-container": "#fdeadf",
+                        "surface-container-low": "#fff1e9",
+                        "surface-container-high": "#f7e5d9",
+                        "surface-container-highest": "#f1dfd4",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#231a13",
+                        "on-surface-variant": "#50443e",
+                        outline: "#82746d",
+                        "outline-variant": "#d4c3bb",
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Shared Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased flex flex-col min-h-screen">
+    <!-- Texture Overlay -->
+    <div class="fixed inset-0 texture-overlay z-40"></div>
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 dark:bg-[#1A0F07]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 shadow-sm dark:shadow-none transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+            <a href="index-de.html" class="flex items-center gap-2">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-12 w-auto">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-6 w-auto ml-1 bg-black p-0.5 rounded-sm">
+            </a>
+                                                <div class="hidden md:flex gap-8 items-center">
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index-de.html">STARTSEITE</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="menu-de.html">MENÜ</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="about-de.html">ÜBER UNS</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="reviews-de.html">BEWERTUNGEN</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="contact-de.html">KONTAKT</a>
+            </div>
+            <div class="hidden md:flex items-center gap-3">
+                    <a href="contact.html" class="text-xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                    <a href="contact-en.html" class="text-xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                    <a href="contact-de.html" class="text-xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+                </div>
+                        <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E] dark:text-[#EAE0D5]">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] dark:bg-[#1A0F07] border-t border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 px-8 py-6 space-y-4">
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index-de.html">STARTSEITE</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="menu-de.html">MENÜ</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="about-de.html">ÜBER UNS</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="reviews-de.html">BEWERTUNGEN</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="contact-de.html">KONTAKT</a>
+            <div class="flex items-center justify-center gap-3 py-4 border-t border-outline-variant/20">
+                    <a href="contact.html" class="text-2xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                    <a href="contact-en.html" class="text-2xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                    <a href="contact-de.html" class="text-2xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+                </div>
+        </div>
+    </nav>
+
+        
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow pt-32">
+        <!-- Header Section -->
+        <section class="py-12 px-8 max-w-7xl mx-auto text-center">
+            <h1 class="font-serif text-4xl md:text-6xl text-primary font-bold mb-4">Kontakt</h1>
+            <p class="font-body-lg text-lg text-on-surface-variant max-w-2xl mx-auto">Wir freuen uns auf Ihren Besuch. Kontaktieren Sie uns gerne für Reservierungen oder Fragen.</p>
+        </section>
+
+        <!-- Bento Grid Contact Layout -->
+        <section class="px-8 max-w-7xl mx-auto pb-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Contact Info Card -->
+                <div class="lg:col-span-5 bg-surface-container-low p-8 rounded shadow-[0_8px_30px_rgb(59,31,14,0.05)] border border-outline-variant/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary-container/5 rounded-full -translate-y-1/2 translate-x-1/3 blur-3xl"></div>
+                    <h2 class="font-serif text-2xl font-bold text-primary mb-8 relative z-10">Finden Sie Uns</h2>
+                    <div class="space-y-8 relative z-10">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-secondary text-3xl mt-1">location_on</span>
+                            <div>
+                                <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Adresse</h3>
+                                <p class="font-body-lg text-lg text-primary">Mirijevski venac 16a, Belgrad</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-secondary text-3xl mt-1">phone</span>
+                            <div>
+                                <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Telefon</h3>
+                                <p class="font-body-lg text-lg text-primary">0113430075</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-secondary text-3xl mt-1">mail</span>
+                            <div>
+                                <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">E-Mail</h3>
+                                <p class="font-body-lg text-lg text-primary">info@caffefransiza.rs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-secondary text-3xl mt-1">schedule</span>
+                            <div>
+                                <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Öffnungszeiten</h3>
+                                <ul class="font-body-md text-base text-primary space-y-1 mt-1">
+                                    <li class="flex justify-between w-48"><span class="text-on-surface-variant">Mo - Fr:</span> <span class="font-semibold">08:00 - 23:00</span></li>
+                                    <li class="flex justify-between w-48"><span class="text-on-surface-variant">Samstag:</span> <span class="font-semibold">09:00 - 00:00</span></li>
+                                    <li class="flex justify-between w-48"><span class="text-on-surface-variant">Sonntag:</span> <span class="font-semibold">09:00 - 22:00</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7 bg-surface p-8 rounded border border-outline-variant/50 shadow-sm">
+                    <h2 class="font-serif text-2xl font-bold text-primary mb-8">Kontaktieren Sie Uns</h2>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col">
+                                <label class="font-label-caps text-label-caps text-on-surface-variant mb-2" for="name">Vollständiger Name</label>
+                                <input class="bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 px-0 py-2 font-body-md text-primary placeholder-on-surface-variant/35 transition-colors" id="name" placeholder="Ihr Name" type="text" required/>
+                            </div>
+                            <div class="flex flex-col">
+                                <label class="font-label-caps text-label-caps text-on-surface-variant mb-2" for="email">E-Mail-Adresse</label>
+                                <input class="bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 px-0 py-2 font-body-md text-primary placeholder-on-surface-variant/35 transition-colors" id="email" placeholder="sie@email.com" type="email" required/>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="font-label-caps text-label-caps text-on-surface-variant mb-2" for="subject">Betreff</label>
+                            <input class="bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 px-0 py-2 font-body-md text-primary placeholder-on-surface-variant/35 transition-colors" id="subject" placeholder="Betreff der Nachricht" type="text" required/>
+                        </div>
+                        <div class="flex flex-col">
+                            <label class="font-label-caps text-label-caps text-on-surface-variant mb-2" for="message">Nachricht</label>
+                            <textarea class="bg-transparent border-0 border-b border-outline-variant focus:border-secondary focus:ring-0 px-0 py-2 font-body-md text-primary placeholder-on-surface-variant/35 transition-colors resize-none" id="message" placeholder="Wie können wir Ihnen helfen?" rows="4" required></textarea>
+                        </div>
+                        <button class="btn-premium bg-primary-container text-on-primary px-8 py-4 w-full md:w-auto mt-4 font-label-caps text-label-caps hover:bg-primary transition-colors flex items-center justify-center gap-2 rounded-sm" type="submit">
+                            <span>NACHRICHT SENDEN</span>
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map View -->
+                <div class="lg:col-span-12 h-[400px] rounded overflow-hidden relative group shadow-[0_8px_30px_rgb(59,31,14,0.05)] border border-outline-variant/30">
+                    <img alt="Lokacija Caffe Franšiza na mapi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbWM83MvlzGlFX6YHCV_UBFINVgfwG1w5CV6oMnvI4G-DvaaEgKd1JU-3TsQ_aHHD9Af57UB9Uz_bF7pU7MU6wE7RA5zI_Ge5TSp4OZp_66FN46jldS5YlzK79OnHFnc5kdsOL8wmTpfR9ofXTl0DPowyIJHtUY3UB_7pZeF4HO98UfncqQzDAQjGpoIMeSQF00Hvp-pw478OzE43TirlpQc_NK57XAJODcbbN78pd2F1H-2gLqVe_DH92Hp2cL2GNPxDK2IvU47nX"/>
+                    <div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#3B1F0E] dark:bg-[#1A0F07] w-full py-16 px-8 border-t border-[#C5A059]/20 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-2 mb-4 justify-center md:justify-start">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh1PMfOuURaILEIBbdAKGsDhTUlpc0Gyq_TMhaWi3kQZz2tnhh-lf9xjNLGYyoADrdzI8f5pSfaaTnmnaV3eH5DixI5mkN536FzEH_l_jlS7kC3mWnTxpK2DTOqbt1Za-p0qDIvUfSF2WXKaTu5tuiHScXEDZFSj2SskreknxM94xtu3NLQz4NUAlW3CfHjMSnDP7g2_KEKvMzxdLa-A-9l9ejigeUlga7wSKTjfCiriiAXSgtepOxJQZaUSDhjYChTW4NE_99b_fa" alt="Franšiza Logo" class="h-10 w-auto">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHmYGVnj6zZSToTzdftUGXFXafyaFwv5Xw33YZbb3K1pSOSIue3g7T8wczFdxKRxqVgeFEn-0CuruZVn3VGQEYznpe4A58nLJwL4ILDjRE8-wkcqeeRBlodCq6kZMj9S3_ob69TVZbVbjdG2RSXLH9kbb1JFvXQACxZo8d3_DDRMS8V_RXUh2rQYOWjsoL5m4KqyL2GU0GNl3nCWV0pU5cSfDsamcCNpaoPTN6l4tBn3vXDvKgqQRqAojhYqKRczZQqehuzJnxEr9x" alt="Franšiza" class="h-5 w-auto ml-1 bg-black p-0.5 rounded-sm">
+                </div>
+                <p class="text-[#EAE0D5]/60 font-serif text-xs uppercase tracking-widest mt-2">© 2026 CAFFE FRANŠIZA BELGRADE. SVA PRAVA ZADRŽANA.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">INSTAGRAM</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">FACEBOOK</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">TRIPADVISOR</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>

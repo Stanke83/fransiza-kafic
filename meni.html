@@ -1,0 +1,497 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Meni | Caffe Franšiza</title>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#220b01",
+                        "primary-container": "#3b1f0e",
+                        secondary: "#7d5700",
+                        "secondary-container": "#fdc664",
+                        background: "#fff8f5",
+                        surface: "#fff8f5",
+                        "surface-container": "#fdeadf",
+                        "surface-container-low": "#fff1e9",
+                        "surface-container-high": "#f7e5d9",
+                        "surface-container-highest": "#f1dfd4",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#231a13",
+                        "on-surface-variant": "#50443e",
+                        outline: "#82746d",
+                        "outline-variant": "#d4c3bb",
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Shared Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface text-on-surface antialiased relative min-h-screen flex flex-col">
+    <!-- Texture Overlay -->
+    <div class="fixed inset-0 texture-overlay z-40"></div>
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 dark:bg-[#1A0F07]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 shadow-sm dark:shadow-none transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-12 w-auto">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-6 w-auto ml-1 bg-black p-0.5 rounded-sm">
+            </a>
+                                                <div class="hidden md:flex gap-8 items-center">
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="meni.html">MENI</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="recenzije.html">RECENZIJE</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            </div>
+            <div class="hidden md:flex items-center gap-3">
+                    <a href="meni.html" class="text-xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                    <a href="meni-en.html" class="text-xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                    <a href="meni-de.html" class="text-xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+                </div>
+                                                <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E] dark:text-[#EAE0D5]">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] dark:bg-[#1A0F07] border-t border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 px-8 py-6 space-y-4">
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="recenzije.html">RECENZIJE</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            <div class="flex items-center justify-center gap-3 py-4 border-t border-outline-variant/20">
+                    <a href="meni.html" class="text-2xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                    <a href="meni-en.html" class="text-2xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                    <a href="meni-de.html" class="text-2xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+                </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+        <section class="py-16 px-8 max-w-7xl mx-auto text-center">
+            <h1 class="font-serif text-4xl md:text-6xl text-primary font-bold mb-4">Naš Meni</h1>
+            <p class="font-body-lg text-lg text-on-surface-variant max-w-2xl mx-auto">
+                Pažljivo odabrana zrna, pripremljena sa strašću. Uživajte u vrhunskom kvalitetu i autentičnom ukusu u svakoj šoljici i zalogaju.
+            </p>
+        </section>
+
+        <!-- Category Navigation -->
+        <section class="px-8 max-w-7xl mx-auto mb-16">
+            <div class="flex overflow-x-auto pb-2 gap-6 border-b border-outline-variant/30 hide-scrollbar justify-start md:justify-center">
+                <button class="tab-btn font-label-caps text-label-caps text-secondary border-b-2 border-secondary pb-2 whitespace-nowrap uppercase transition-colors duration-300" data-target="kafa-section">Kafa</button>
+                <button class="tab-btn font-label-caps text-label-caps text-on-surface-variant hover:text-secondary pb-2 whitespace-nowrap uppercase transition-colors duration-300" data-target="topli-napici-section">Topli Napici</button>
+                <button class="tab-btn font-label-caps text-label-caps text-on-surface-variant hover:text-secondary pb-2 whitespace-nowrap uppercase transition-colors duration-300" data-target="osvezavajuca-pica-section">Osvežavajuća Pića</button>
+                <button class="tab-btn font-label-caps text-label-caps text-on-surface-variant hover:text-secondary pb-2 whitespace-nowrap uppercase transition-colors duration-300" data-target="gazirana-pica-section">Gazirana Pića</button>
+                <button class="tab-btn font-label-caps text-label-caps text-on-surface-variant hover:text-secondary pb-2 whitespace-nowrap uppercase transition-colors duration-300" data-target="poslastice-section">Poslastice</button>
+            </div>
+        </section>
+
+        <!-- Menu Lists -->
+        <section class="px-8 max-w-7xl mx-auto mb-24">
+            <!-- 1. Kafa Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 menu-grid" id="kafa-section">
+                <!-- Item 1 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Espresso kafa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7yZHj6AI6n7sk-1pGtkAptmF9yumgbp39vMEtvmIlpeZE6ZERK3FiKb-XXnJgWw6gy2mQZlv_K7WO9H25QskSqyUvSbMd0IsyG2EQazZgLVz-xrihtbFDvRmLUxwiExCyujmWi-RPCi9DAHS_lI2R9IP5hON4LJyP_sUFVlMAad74LK8PUKH3lvhk2XLGH-WhGihg_l8ACWxPwBDB8d0ynAHhCW1hy65wcpvnood7xOCP49193IpekSASVscXAnglCqt4DxRtjmbS"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Espresso</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">180 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Vrhunska 100% Arabica mešavina, intenzivan ukus.</p>
+                        <div class="mt-1">
+                            <span class="inline-block px-2 py-0.5 rounded border border-secondary/30 text-secondary font-label-caps text-[9px] uppercase tracking-wider">Klasik</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Cappuccino" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL_2SbNHTLVpWDKfYvl6AMKZX-xzYIPywuI22frV2dm8sn0hz78cn2vPO4hwm10EWrY5M4uwDTX62Yd-9zSdoTUCwh2N1tdctHoBLU7nHC6jKRaESplLgwsb8_RFyT_csp2VQXAGbwgdu9huQr2Vtn7bgKQeg5ddqKv5CDB2_HszVT-Xh_rFhCEuNWSGW-B8saiXplmyDWV0tQo_eaUufWzA42okqGWwmLREarpeE1l6EEx_vFhb86DxpOUAz8zu6FUdY6t5XSSbQu"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Cappuccino</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">220 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Espresso sa savršeno kremastom mlečnom penom.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Caffe Latte" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7yZHj6AI6n7sk-1pGtkAptmF9yumgbp39vMEtvmIlpeZE6ZERK3FiKb-XXnJgWw6gy2mQZlv_K7WO9H25QskSqyUvSbMd0IsyG2EQazZgLVz-xrihtbFDvRmLUxwiExCyujmWi-RPCi9DAHS_lI2R9IP5hON4LJyP_sUFVlMAad74LK8PUKH3lvhk2XLGH-WhGihg_l8ACWxPwBDB8d0ynAHhCW1hy65wcpvnood7xOCP49193IpekSASVscXAnglCqt4DxRtjmbS"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Caffe Latte</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">240 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Nežna kombinacija espressa i bogate mlečne pene.</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Macchiato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL_2SbNHTLVpWDKfYvl6AMKZX-xzYIPywuI22frV2dm8sn0hz78cn2vPO4hwm10EWrY5M4uwDTX62Yd-9zSdoTUCwh2N1tdctHoBLU7nHC6jKRaESplLgwsb8_RFyT_csp2VQXAGbwgdu9huQr2Vtn7bgKQeg5ddqKv5CDB2_HszVT-Xh_rFhCEuNWSGW-B8saiXplmyDWV0tQo_eaUufWzA42okqGWwmLREarpeE1l6EEx_vFhb86DxpOUAz8zu6FUdY6t5XSSbQu"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Macchiato</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">190 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Klasičan espresso sa malom kapljicom mlečne pene.</p>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Mocha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7yZHj6AI6n7sk-1pGtkAptmF9yumgbp39vMEtvmIlpeZE6ZERK3FiKb-XXnJgWw6gy2mQZlv_K7WO9H25QskSqyUvSbMd0IsyG2EQazZgLVz-xrihtbFDvRmLUxwiExCyujmWi-RPCi9DAHS_lI2R9IP5hON4LJyP_sUFVlMAad74LK8PUKH3lvhk2XLGH-WhGihg_l8ACWxPwBDB8d0ynAHhCW1hy65wcpvnood7xOCP49193IpekSASVscXAnglCqt4DxRtjmbS"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Mocha</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">260 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Savršen spoj espressa, tople čokolade i svilenkastog mleka.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Topli Napici Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 menu-grid hidden" id="topli-napici-section">
+                <!-- Item 1 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Topla Čokolada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnTxK5PqDEvVA82IUkZB5KtqxXH1px9szv459-F2E8ECJHu3onrCduaKOLHCtQUuToUuK6fOAIfIWL4QrPVCYc3lF9skekvi0zeIiuuNkeUl8OZ4QJCQv0EPXaZeEOEcU7Td-etlwWSJjuoMWUV9UKuEJ9u_S1Cr5n2cnleYg-iYuuMS2eweB0-PNSJ1H4zmI5WfnQVxYze1NLJPY01XzWCziW0sw5oM_VwZw0JXwxuLu_q7RujKzTndEGRRkrZSjMGjA4LSzStnkq"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Topla Čokolada</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">280 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Bela ili crna, gusta i kremasta čokolada.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Premium Čajevi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQk-geAaBgn8tfEpPvnFIFbOy_8PvdbDaGRSiyqWzt80PxQfy_ZKHJUuSKPllfd09kY6W_sT-pI6GYJdqrysnoh-aBEEItP-M9VFSOys4dcnYLqKIVSU-oYSUU9b2tYXY3GSUaj1ePWbiXSxpUAacd56g0-OBS5_8MfXKL5-g6vKejgYoFA--QYqqUGRbkvjI3U38H2O7J2holVb1OJ5S-rsRzSdOD8PTDDCTD96_5quK4JJ_kk5Jsixrxvt0YFr31zr51oxC7l34a"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Čajevi</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">220 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Veliki izbor premium čajeva serviranih sa medom i limunom.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Kuvano vino" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDErrTYCYFGbPKIANqtSenerzaxOfzYlbD7Ukzb8z9cw4HR6b6olAXSupFGSshxALEGj8vC1m1P1M7lmbQ9XWielP186qDOvxtv175moVV4OZVAU3Yqjjv2OnsVdbOEJ5s9K8Fg-cjUNRImAOva4MlpFBOMpczBCSajRLpszC-yk1TpZlPARpcXVfTIpqVnMoZ28nNeRjDQNoKZ5qc4tJx5v3XUu1dWfYrL1YKIwHcbKLdmr4yoVwumz0BTJBJ7dNXEuATM_pXqjqLc"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Kuvano vino</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">320 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Sezonska ponuda - aromatično crveno vino sa začinima.</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Salep" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa45QfzY3n1_IZOCj3EHRwsooiztGSLFM0NO6juJjJp8CCzKvDeQI6FdFxt5NQ7n68HKwCGO0yNg9lLZlg3YzC_2uHyQbF7iMrpVggbAs0rwtRILmzzLJrHdjpV2KnDSmK_0I7rgiFq-cpNiaE7wLp3LbqkS_PQ1Zfb9P4Yhw2N5QJQO4y_6yygrQkfmRA5fJYpBp-XNZiVbFVXyxl5YhsyUsv97ezfQkDKzhpU0GFdatiHRM78649tGh0WECHtIndi3Eoa3EfeHZ3"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Salep</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">240 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Tradicionalni topli napitak posut cimetom.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Osvežavajuća Pića Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 menu-grid hidden" id="osvezavajuca-pica-section">
+                <!-- Item 1 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Domaća Limunada" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADmijxoiW_ewMxxs4A_y41JZvC_Hk-2h5PFQ6ybtxmtUo-ohe5zJ8xuMweOglKlw37zOHXawS_aUIcp0mlNcX17V9MfCxIeIzEbnQ-l2baVNFNjczdsYWA3r0JYSY5M0Wk09bVc9XHnxcWbYSladQ2gkeocOz5x8ogQjwHPQdZbntEhDeByP7bnxZfFc6nGWYf37IYgPsHFD00JAIZ28AGD27ch75Kl_4wt5w44fDcqe5anE3OuC1DJc5UoEFxR6bygkgZPgaDGdSs"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Domaća Limunada</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">250 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Sveže ceđeni limun sa malo meda i nanom.</p>
+                        <div class="mt-1">
+                            <span class="inline-block px-2 py-0.5 rounded border border-secondary/30 text-secondary font-label-caps text-[9px] uppercase tracking-wider">Osvežavajuće</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Sveže ceđena narandža" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG7B8prJvkKYsounX7768-uun3C6wqGsoiaIeHsRklcA1ZhEvgwjT3N5NecFwR9e-mlfHwLpjLIDu0lDJDMseHpGdn985U5KXwFm6ARuWxXKXZH2ltBs6NpAWIL4t5D5-ZjCIqyX51bWaDSXWlXmHePDc2z30r3nQeuX7OY5bKOdEK-KE4V-2R8Sb0KNUFH8YHKBZfWR1I4KGGsIzSvnS7abq38jdQQIcDptd9eGD5GOYDHkgMuvFlN4PcCjpCbIfIhLJvJ4IiuuVc"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Sveže ceđena narandža</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">350 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Sveže ceđeni sok od najkvalitetnijih narandži.</p>
+                        <div class="mt-1">
+                            <span class="inline-block px-2 py-0.5 rounded border border-secondary/30 text-secondary font-label-caps text-[9px] uppercase tracking-wider">Vitamini</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Domaći Ice Tea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADmijxoiW_ewMxxs4A_y41JZvC_Hk-2h5PFQ6ybtxmtUo-ohe5zJ8xuMweOglKlw37zOHXawS_aUIcp0mlNcX17V9MfCxIeIzEbnQ-l2baVNFNjczdsYWA3r0JYSY5M0Wk09bVc9XHnxcWbYSladQ2gkeocOz5x8ogQjwHPQdZbntEhDeByP7bnxZfFc6nGWYf37IYgPsHFD00JAIZ28AGD27ch75Kl_4wt5w44fDcqe5anE3OuC1DJc5UoEFxR6bygkgZPgaDGdSs"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Domaći Ice Tea</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">280 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Osvežavajući čaj sa nanom i citrusima.</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Mineralna Voda" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL_2SbNHTLVpWDKfYvl6AMKZX-xzYIPywuI22frV2dm8sn0hz78cn2vPO4hwm10EWrY5M4uwDTX62Yd-9zSdoTUCwh2N1tdctHoBLU7nHC6jKRaESplLgwsb8_RFyT_csp2VQXAGbwgdu9huQr2Vtn7bgKQeg5ddqKv5CDB2_HszVT-Xh_rFhCEuNWSGW-B8saiXplmyDWV0tQo_eaUufWzA42okqGWwmLREarpeE1l6EEx_vFhb86DxpOUAz8zu6FUdY6t5XSSbQu"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Mineralna Voda</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">180 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">0.33l gazirana ili negazirana.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Gazirana Pića Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 menu-grid hidden" id="gazirana-pica-section">
+                <!-- Coca-Cola -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20 p-2">
+                        <img alt="Coca-Cola" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5LmsnFwUBVCy8CO0IPBWEQdgDBVL72IIKFK8qpT3CbO9duWzZltKXTueEfNDXYs7oiWdL6QneX9mEEgA9wTTxm0lbsO1KRf9N2I5IN0Yr4nz3vawGWK8gfKj-83DINudf_ysUg0tTu3PcLIWPeTARVtHMBsCAQ5LD-ih3ICV2CsEtG7zcjZ7B5fuBCRNQySOWXJUDRPTcK1B-f8y25e-2KZ4NcWwkltL34DsRbBkXWs0GpucTqbT5NAc2at3dOOLN1pS9qN5s8wQC"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Coca-Cola</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">260 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">0.25l - Klasičan ukus koji osvežava.</p>
+                    </div>
+                </div>
+                <!-- Fanta -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20 p-2">
+                        <img alt="Fanta" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD6P7hxxYasoJjda-FwTZODkoW2C79LBAIbjmrCm_QXZlpgqWqClrUZd4Cp2KJjuTUnKfnxGahH9K_rsEse3oyOlegy5VJbiCRrf9QsFVANM2Ge43kdrDyfwhjyAWnx9gIPg0kiknGXW3owf7WX4BCz43sxtaxNWHFwxXEjkqEzUXPo8DWxZQavLZUaT4fUGwz3UmpfA0sQE7wDI92_Tt-PKsol6iDERBaL357B5umXIie7wMyDV-Xe5cKxjgiltpS3MGFwq7st8RL"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Fanta</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">260 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">0.25l - Voćni i intenzivan ukus narandže.</p>
+                    </div>
+                </div>
+                <!-- Sprite -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20 p-2">
+                        <img alt="Sprite" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLseTjJwGtMGAMybzQgRUCjZI2o9bA9YwyCACECxcvNSYDSd3NrQcFkyemTKqJiMQJzupO7Eff7mcVAEad2QSL_TLAPfsysqpw7Pluol76KQXIh_mGnWMIJ_q5RvPqEgBwnm1waxeMPQ_RNO8OOM-4By94RY7EkSDUrIuWVOw17e4IeMgjWKv98q5nhummnARIxPZIH1RungF0e0kjyFAXe0crZguj2LeO6bhg-HWgas45THqPRBp4pDCrw"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Sprite</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">260 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">0.25l - Osvežavajuća kombinacija limuna i limete.</p>
+                    </div>
+                </div>
+                <!-- Schweppes Bitter Lemon -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20 p-2">
+                        <img alt="Schweppes Bitter Lemon" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIha20Ry0Kg1TXaPJYlgQELmjfQ5Aj_icmI1lF6h-t4z9zE9yT1fp1nlUrEGvDp4qUvkmCpjJ5zWD3TG3SVDUbT-aORPL-xZ1ILGJElZmAP0HlKDb9iAuBMMvHrX02BNkfI_yb_xGODi-yTKjxNBeTDg4QxlG32z26W3HEYW0os8XQdFT7wkFWdH6Le86CZ-X_PG13Kciwn1eyn-Rudk05spzKfIj16F6qvwX4fgcQH6MGkkURJi9GFFWCBt8qXxbc9t4QAOazSCFl"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Schweppes Bitter Lemon</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">260 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">0.25l - Karakterističan gorak ukus limuna.</p>
+                    </div>
+                </div>
+                <!-- Coca-Cola Zero -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20 p-2">
+                        <img alt="Coca-Cola Zero" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOYpxfga7jMed_LX_xgvSE8squGP2OEVa_L9qFGTVXReTEcTEXcD9WoLhBfdb2Aq24O0Db7cNfms8IRWURAUN3Nb8EG8mWWbHVyszujgqNFqU-xFnnAHrF4iJFnKdQA1B0YBxfXNZ7HJuPqOSDdterWOzlUskcxKjzfexLx-ghIA6Xckg-zkEUtYdwFApbQwFPpfYtflrRkfnRtkUIXNc2EfdLDEii2rlsX9bDzEIXMZmA8fr1eawPZ45QOZuGIaQarb3grNmyQYxn"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Coca-Cola Zero</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">260 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">0.25l - Savršen Coca-Cola ukus bez šećera.</p>
+                    </div>
+                </div>
+                <!-- Next Narandža -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20 p-2">
+                        <img alt="Next Narandža" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbRM72-7vQxNqMiRMrCDyo_sZQ8_l1_n_2LfdaLE986R8DvK46Juv_sDCd95W5ClE-ibdraEnSmTJiZ2aVcb6bq1Sa4MPwrmYUtuztTWjDyIppWum7zlVTQ7e9MnreRLvQbgF2d0cKycwYJdbyPqKif5JFkhuH2XLp9HNaUF1K4IB5_0wJ6C475Xw-npp-LwoFgCd4hCnXFc4dGu2W-PQqpDtwOELT5i-0PC1A_gQHeIHtflAQXlrI9RX7LA_hbLsrakgJPHadrvRu"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Next Narandža</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">260 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">0.2l - Prirodan i osvežavajući voćni sok.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Poslastice Section (Serbian Updated) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 menu-grid hidden" id="poslastice-section">
+                <!-- Item 1 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Franšiza Krempita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVY88tqwZf3pcUQu-n9Xc48TpKxANRQNb6MHTDrfpnz8myH7LEMW5IJ9dC64yftxSYA_Hn-uMrSJeZnKV57edSJUB-WYlCqnszpYIg4nITRWjuWpvCxDXvp5dj47tCz6KJpTXkjso9aojNLsj_COEHpP7MSnvN3CAgqpe8_-LylsYC0nFLxstp_rggH-6klkG09txYuva-bGJJg4vK6MRNjNHsPChBy_6cfckXfqQbrqYZ5aCej7k73WKW6czxS2VTGajK8ox4AYnt"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Franšiza Krempita</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">380 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Domaća hrskava kora sa laganim kremom od vanile i šlagom.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Trileće" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG9ftYE0gbJAmSxZoLOWJAsPeg0RUJse6bBPjRybKdUfW4gHqIzAcSb2X_JXrHKG0GEXSdPwIQHBAImpvKSiMjjiB5a0BKHUPQztQ-FYxAJ8rhiCZOMnkxBX_LHiC9cWBdj41tB71hgnX-F8CTXEjjCALuJHFQQRQpa9qnbNK1srxaSHNLWAznNkqUjzdy3Rgf0T7qwg6ultb6U3JY2Q73j5k3XTGfgkWCRkM4u8YcWjQn3AZEbmTVhG3oEb0YYFe7ReDZSgZ7T_ng"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Trileće</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">360 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Tradicionalni kolač natopljen u tri vrste mleka sa karamel prelivom.</p>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Čokoladna Torta" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg9gQ9Icwl8EgEZGf1rjYPX4OOfA5mY_B5AW0qjRjfNbWPBw-cViqEk0dCQTI7fFhOpqHxWo8wDRXbI5m7L_iMzc8ew9PmWVSlmvUkEF9oxsbVzTD-PBMYdeoPu2AvIBpRTP054w0xMQw1sXgFFbCVGL78im48kioi5nfav6FPiHHo1SdMeOwXRf3GSv53yyZifkDEm4uXFfw7aT52KYQmlfsEm3dysSM4ZekoPYSSY-9lDqLiSLvmG3ROm7XmtO-o2BfwRFyXvzTW"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Čokoladna Torta</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">420 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Bogata torta od tamne belgijske čokolade i lešnika.</p>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="flex gap-4 items-start group">
+                    <div class="w-24 h-24 rounded overflow-hidden flex-shrink-0 bg-surface-container border border-outline-variant/20">
+                        <img alt="Voćni Kup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKqnf1kWNwmQAF-KdXPyEZc1vvRp7-FH0LhBF_EPSTQN5mhZqimK-II-7pGWSyK1357abai-QOvpark8RiHABvb4cZ1ullY-BOqpCRHLdjRmx0qCW-Z_SXONRoZc12xWqb4MjQTqiwiwh12dp7Ro54nlT8uXeauNrugkeNQmkIh1vi0hrJjW4qjqE0X4V-328jQjXFIinWf-_tlvjbt0JzadWFrB8Bnhg8BXuYh6C2RPqJENJoxuc34nUSdxbdlm1xFq3fBCN7Qi2e"/>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h3 class="font-serif text-lg font-semibold text-primary">Voćni Kup</h3>
+                            <div class="dot-leader"></div>
+                            <span class="font-body-md text-secondary font-semibold whitespace-nowrap">450 RSD</span>
+                        </div>
+                        <p class="font-body-md text-on-surface-variant text-sm leading-relaxed">Kombinacija sezonskog voća, premijum sladoleda od vanile i šlaga.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offer Banner -->
+        <section class="px-8 max-w-7xl mx-auto mb-24">
+            <div class="relative rounded overflow-hidden bg-surface-container-high ambient-shadow">
+                <div class="absolute inset-0 bg-gradient-to-r from-surface-container-high via-surface-container-high/90 to-transparent z-10"></div>
+                <img alt="Franšiza Kafa Specijal" class="absolute inset-0 w-full h-full object-cover object-right z-0 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG7B8prJvkKYsounX7768-uun3C6wqGsoiaIeHsRklcA1ZhEvgwjT3N5NecFwR9e-mlfHwLpjLIDu0lDJDMseHpGdn985U5KXwFm6ARuWxXKXZH2ltBs6NpAWIL4t5D5-ZjCIqyX51bWaDSXWlXmHePDc2z30r3nQeuX7OY5bKOdEK-KE4V-2R8Sb0KNUFH8YHKBZfWR1I4KGGsIzSvnS7abq38jdQQIcDptd9eGD5GOYDHkgMuvFlN4PcCjpCbIfIhLJvJ4IiuuVc"/>
+                <div class="relative z-20 p-8 md:p-16 max-w-lg">
+                    <div class="inline-block px-3 py-1 mb-4 border border-secondary text-secondary font-label-caps text-label-caps uppercase tracking-widest rounded bg-surface/80 backdrop-blur-sm">
+                        Potpis Kuće
+                    </div>
+                    <h2 class="font-serif text-3xl md:text-4xl text-primary font-bold mb-4">Franšiza Kafa</h2>
+                    <p class="font-body-lg text-lg text-on-surface-variant mb-6 leading-relaxed">
+                        Naš jedinstveni recept koji spaja bogat espresso, sloj tople čokolade i posip od lešnika. Iskustvo koje se pamti.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#3B1F0E] dark:bg-[#1A0F07] w-full py-16 px-8 border-t border-[#C5A059]/20 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-2 mb-4 justify-center md:justify-start">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-10 w-auto">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-5 w-auto ml-1 bg-black p-0.5 rounded-sm">
+                </div>
+                <p class="text-[#EAE0D5]/60 font-serif text-xs uppercase tracking-widest mt-2">© 2026 CAFFE FRANŠIZA BELGRADE. SVA PRAVA ZADRŽANA.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">INSTAGRAM</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">FACEBOOK</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">TRIPADVISOR</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>

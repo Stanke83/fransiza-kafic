@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>O nama | Caffe Franšiza</title>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#220b01",
+                        "primary-container": "#3b1f0e",
+                        secondary: "#7d5700",
+                        "secondary-container": "#fdc664",
+                        background: "#fff8f5",
+                        surface: "#fff8f5",
+                        "surface-container": "#fdeadf",
+                        "surface-container-low": "#fff1e9",
+                        "surface-container-high": "#f7e5d9",
+                        "surface-container-highest": "#f1dfd4",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#231a13",
+                        "on-surface-variant": "#50443e",
+                        outline: "#82746d",
+                        "outline-variant": "#d4c3bb",
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Shared Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#FFFDF9] text-on-surface antialiased overflow-x-hidden">
+    <!-- Texture Overlay -->
+    <div class="fixed inset-0 texture-overlay z-40"></div>
+
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 dark:bg-[#1A0F07]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 shadow-sm dark:shadow-none transition-all duration-300">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-12 w-auto">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-6 w-auto ml-1 p-0.5 rounded-sm">
+            </a>
+                                                <div class="hidden md:flex gap-8 items-center">
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="o-nama.html">O NAMA</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="recenzije.html">RECENZIJE</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            </div>
+            <div class="hidden md:flex items-center gap-3">
+                            <a href="index.html" class="text-xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                            <a href="index-en.html" class="text-xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                            <a href="index-de.html" class="text-xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+                </div>
+                                                <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E] dark:text-[#EAE0D5]">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] dark:bg-[#1A0F07] border-t border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 px-8 py-6 space-y-4">
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="recenzije.html">RECENZIJE</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            <div class="flex items-center justify-center gap-3 py-4 border-t border-outline-variant/20">
+                    <a href="index.html" class="text-2xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                    <a href="index-en.html" class="text-2xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                    <a href="index-de.html" class="text-2xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+                </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+        <section class="relative min-h-[500px] md:min-h-[600px] flex items-center justify-center bg-surface-container-low overflow-hidden border-b border-outline-variant">
+            <div class="absolute inset-0 z-0">
+                <img alt="O nama hero background" class="w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0zmAMuEG8UK-iCC9j2zvedf1GxctlP2eKzOk8CRRwI46E5aEScaSxSlwHFJDU60nQYIxJCsOnVtsCJb3mWrbKwDHMYUrIHi2Ax0_l2sUTP76pVC90tcLHYb6HmWrhBjvlnhAEQLL3EMUDxUG9fzaGr-0egO38HFpXRF_1qYdOgmEDKnaKNPG_ytBLrSiMUdLD2zNum0F2-hPbybiAcXW4XUgAj2breyV0hka_IlOWhbNDeVZIvSztTjl6uIWv5goQMxFIFymi7xvv">
+                <div class="absolute inset-0 bg-primary/45 backdrop-blur-[2px]"></div>
+            </div>
+            <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+                <h1 class="font-serif text-5xl md:text-7xl text-on-primary font-bold mb-6 drop-shadow-lg">Priča o Nama</h1>
+                <p class="font-body-lg text-lg md:text-2xl text-on-primary/90 max-w-2xl mx-auto drop-shadow-md leading-relaxed font-light">
+                    Više od kafića. Mesto gde se susreću tradicija, moderan dizajn i zajednica.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Section 1: The Story -->
+        <section class="py-24 px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-6 md:col-start-2">
+                    <h2 class="font-serif text-3xl md:text-4xl text-on-surface font-semibold mb-6">Srce Mirijeva</h2>
+                    <p class="font-body-md text-base text-on-surface-variant mb-6 leading-relaxed">
+                        Smešten u srcu Mirijeva, Caffe Franšiza je postao nezaobilazna destinacija za lokalno stanovništvo i širu zajednicu Beograda. Naša misija je jednostavna: stvoriti prostor koji odiše toplinom i sofisticiranošću, gde se svaki gost oseća kao kod kuće, a svaka šoljica kafe priča priču o kvalitetu.
+                    </p>
+                    <p class="font-body-md text-base text-on-surface-variant mb-8 leading-relaxed">
+                        Bilo da tražite miran kutak za rad sa brzim Wi-Fi internetom, opuštanje na našoj prostranoj terasi, ili večernji izlazak uz vrhunske koktele sa našeg full bara, Franšiza nudi iskustvo prilagođeno svakom trenutku vašeg dana.
+                    </p>
+                    <div class="inline-flex items-center gap-4 bg-surface-container-high px-6 py-4 rounded border border-outline-variant shadow-[0_4px_24px_rgba(59,31,14,0.05)]">
+                        <span class="material-symbols-outlined text-secondary text-3xl icon-filled">star</span>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-2xl font-bold leading-tight text-on-surface">4.6</span>
+                            <span class="font-label-caps text-[10px] text-on-surface-variant">Google Ocena</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 md:col-start-8">
+                    <div class="relative w-full aspect-[4/5] rounded shadow-[0_12px_48px_rgba(59,31,14,0.1)] overflow-hidden border border-outline-variant/50">
+                        <img alt="Kafa sa šlagom u Caffe Franšiza" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaDJQThT6P5MBazb7qGSKzwOaS9YmV4ucSlC3lB3yLAKNppqrlyNjrvZSZdDadBIt723nBvh0uhSwXsoodEKuIHUGaUpLWDnSZODA8VYTrAkGsMUYRFOf2eNcn-CEMWLzh6moF_gvp3lbYZfopIUi7ypAcJvJ3y-z7_n3XAp3ZroVnabX0sQvjJ_1qcQVsCN_jNyifszSIo_Lp45P7o9XCsePm3OzN5h3EtkQaYJ4bslolwdnscHGq21U8eqfv51-GVOiScwEv6c3J">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="max-w-4xl mx-auto px-8 py-4 flex items-center justify-center gap-6">
+            <div class="h-px bg-outline-variant w-full max-w-[100px]"></div>
+            <span class="material-symbols-outlined text-outline text-lg">local_cafe</span>
+            <div class="h-px bg-outline-variant w-full max-w-[100px]"></div>
+        </div>
+
+        <!-- The Experience (Bento Grid) -->
+        <section class="py-24 px-8 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-on-surface font-semibold mb-3">Franšiza Iskustvo</h2>
+                <p class="font-body-md text-base text-on-surface-variant max-w-2xl mx-auto">
+                    Kombinacija modernog komfora i tradicionalne ugostiteljske pažnje prema detaljima.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+                <!-- Large Card -->
+                <div class="md:col-span-8 rounded bg-surface-container border border-outline-variant shadow-[0_4px_24px_rgba(59,31,14,0.03)] overflow-hidden relative group">
+                    <div class="absolute inset-0">
+                        <img alt="Prostrana terasa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHslQT_Qn1nrUivKVuCKl78oBoTo75S9d5XK4jsU5Y7yJbZF0yH3jGa193VlX1YLY8oQzYhUSZ8u6K_BYStmWZw8S10MVuSx8STjINHH8HKMWJAAGF_iMc1ke10cHJTBpMLEiRTXEwddRLk9KRziZfXGRmJ1Po7Q8B1W4xHTVoG6lk7rEhDnCkpuqcaMpE_Yyfehr8opVnnboI2PpMJntrQGXUn-HSYGfGvrid2murqOFwbpOKpBVlnb_vHSiQ6z7AlfcSjgDvTJs5">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="font-serif text-2xl text-on-primary mb-2">Prostrana Terasa</h3>
+                        <p class="font-body-md text-base text-on-primary/85 font-light">Vaša oaza mira na otvorenom, idealna za sunčana prepodneva i prijatne večeri.</p>
+                    </div>
+                </div>
+                
+                <!-- Small Card 1 -->
+                <div class="md:col-span-4 rounded bg-surface-container border border-outline-variant shadow-[0_4px_24px_rgba(59,31,14,0.03)] overflow-hidden relative group">
+                    <div class="absolute inset-0">
+                        <img alt="Kokteli bar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALdoDO8yYEW9lxg3wLuZVEyq0SgaCP_9SJxIMc8P1mL2oOyQcmeBugn5G-52--V07GePfbO7jSDh8KIQSg154YMsFqpIWUTHWzrDaJL0mGZX0EJFv034-46ek3SiM5zCwpukwIA28uul6siMB-KrY1sGudb-lJ32jT8JtUJYjza4JnaoPHPG5-XxU257zROmKxmjtXSM121EWpAY4tZYPxLEqxmrf6GkTuaOqGY7BKBd4dg9OPOiuLXrjYkp3nmKoHM5iDmB5zqBRX">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-6 w-full">
+                        <h3 class="font-serif text-xl text-on-primary mb-1">Premium Bar</h3>
+                        <p class="font-body-md text-sm text-on-primary/85 font-light">Od zanatske kafe do signature koktela.</p>
+                    </div>
+                </div>
+                
+                <!-- Small Card 2 -->
+                <div class="md:col-span-4 rounded bg-surface-container border border-outline-variant shadow-[0_4px_24px_rgba(59,31,14,0.03)] p-6 flex flex-col justify-center items-center text-center relative overflow-hidden bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmOGY1Ij48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlPSIjM2IxZjBlIiBzdHJva2Utd2lkdGg9IjAuMSIgc3Ryb2tlLW9wYWNpdHk9IjAuMDUiPjwvcGF0aD4KPC9zdmc+')]">
+                    <span class="material-symbols-outlined text-secondary text-5xl mb-4 icon-filled">wifi</span>
+                    <h3 class="font-serif text-xl text-on-surface mb-2 font-semibold">Digitalni Nomadi</h3>
+                    <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">Brz i pouzdan Wi-Fi u modernom, tihom ambijentu.</p>
+                </div>
+                
+                <!-- Medium Card -->
+                <div class="md:col-span-8 rounded bg-surface-container border border-outline-variant shadow-[0_4px_24px_rgba(59,31,14,0.03)] overflow-hidden relative group">
+                    <div class="absolute inset-0">
+                        <img alt="Uređen enterijer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnyVbCMuRBcmmoDAEE0do-PpH9VLP9K38nI1s8pIDJua5c-F0coKXWOqgLUjRADuStnaW2HGCJlCpsmtTAgsKk8uZRqLxk6jVVi4UOu2fXtcAVT_wEm1xSIwxzLPwRVMc7ToQ1abmAa0WXiGnpjEjXTUUv2I17qWcKalIpsrROfBNpZDxOV6yQg1QGslHxhgkjuXlkm-KH_efl6GULeoCRq2e3lEE8ngKFUbpeT15hBIk1yZuYPq1VI-LXfV0PkQalgqQh3wEV98_c">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8 w-full">
+                        <h3 class="font-serif text-2xl text-on-primary mb-2">Moderan Enterijer</h3>
+                        <p class="font-body-md text-base text-on-primary/85 font-light">Čiste linije, udobnost i dizajn koji stvara osećaj luksuza i opuštenosti.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#3B1F0E] dark:bg-[#1A0F07] w-full py-16 px-8 border-t border-[#C5A059]/20 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="flex items-center gap-2 mb-4 justify-center md:justify-start">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-10 w-auto">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-5 w-auto ml-1 p-0.5 rounded-sm">
+                </div>
+                <p class="text-[#EAE0D5]/60 font-serif text-xs uppercase tracking-widest mt-2">© 2026 CAFFE FRANŠIZA BELGRADE. SVA PRAVA ZADRŽANA.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">INSTAGRAM</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">FACEBOOK</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="#">TRIPADVISOR</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared Javascript -->
+    <script src="app.js"></script>
+</body>
+</html>
