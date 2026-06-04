@@ -1,15 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Caffe Franchise | Home</title>
-    <!-- Google Web Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -17,146 +14,215 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#220b01",
-                        "primary-container": "#3b1f0e",
-                        secondary: "#7d5700",
-                        "secondary-container": "#fdc664",
-                        background: "#fff8f5",
-                        surface: "#fff8f5",
-                        "surface-container": "#fdeadf",
-                        "surface-container-low": "#fff1e9",
-                        "surface-container-high": "#f7e5d9",
-                        "surface-container-highest": "#f1dfd4",
-                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#edbca3",
+                        "on-tertiary-fixed": "#1c1c19",
                         "on-surface": "#231a13",
-                        "on-surface-variant": "#50443e",
-                        outline: "#82746d",
+                        "surface-container-high": "#f7e5d9",
+                        "on-tertiary-fixed-variant": "#484743",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#edbca3",
+                        "outline": "#82746d",
+                        "surface-container-highest": "#f1dfd4",
+                        "surface-bright": "#fff8f5",
+                        "surface-variant": "#f1dfd4",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#8f8d89",
+                        "tertiary": "#12110f",
+                        "secondary-fixed": "#ffdeab",
+                        "error": "#ba1a1a",
+                        "surface": "#fff8f5",
+                        "background": "#fff8f5",
+                        "surface-container": "#fdeadf",
+                        "on-primary-fixed": "#2e1505",
+                        "on-primary-fixed-variant": "#613f2c",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#e6e2dd",
                         "outline-variant": "#d4c3bb",
+                        "on-primary-container": "#af846d",
+                        "on-secondary-container": "#755100",
+                        "surface-container-low": "#fff1e9",
+                        "secondary-fixed-dim": "#f4be5d",
+                        "on-secondary-fixed-variant": "#5f4100",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#50443e",
+                        "primary-fixed": "#ffdbc9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#271900",
+                        "surface-tint": "#7b5641",
+                        "secondary": "#7d5700",
+                        "inverse-surface": "#392e27",
+                        "primary": "#220b01",
+                        "tertiary-container": "#272623",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#3b1f0e",
+                        "on-background": "#231a13",
+                        "surface-dim": "#e9d7cb",
+                        "secondary-container": "#fdc664",
+                        "inverse-on-surface": "#ffede3",
+                        "tertiary-fixed-dim": "#c9c6c1"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        xl: "80px",
+                        md: "24px",
+                        margin: "64px",
+                        xs: "4px",
+                        lg: "48px",
+                        gutter: "24px",
+                        sm: "12px",
+                        base: "8px"
+                    },
+                    fontFamily: {
+                        serif: ["Noto Serif", "Georgia", "serif"],
+                        sans: ["Inter", "system-ui", "sans-serif"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "display-xl": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
                     }
                 }
             }
         }
     </script>
-    <!-- Shared Stylesheets -->
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
+    </style>
     <link rel="stylesheet" href="style.css">
+    <style>
+        html { scroll-padding-top: calc(var(--nav-h, 6rem) + 2px); }
+        main { padding-top: calc(var(--nav-h, 6rem) + 2px); }
+    </style>
+    <title>Caffe Franchise | Home</title>
 </head>
-<body class="bg-background text-on-surface antialiased overflow-x-hidden">
-    <!-- Texture Overlay -->
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
     <div class="fixed inset-0 texture-overlay z-40"></div>
-
-    <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 dark:bg-[#1A0F07]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 shadow-sm dark:shadow-none transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 shadow-sm transition-all duration-300">
         <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
-            <a href="index-en.html" class="flex items-center gap-2">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-12 w-auto">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-6 w-auto ml-1 bg-black p-0.5 rounded-sm">
-            </a>
-                                                <div class="hidden md:flex gap-8 items-center">
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="index-en.html">HOME</a>
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="menu-en.html">MENU</a>
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="about-en.html">ABOUT</a>
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="reviews-en.html">REVIEWS</a>
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="contact-en.html">CONTACT</a>
+            <div class="text-2xl font-serif font-bold text-[#3B1F0E] tracking-tighter">
+                <a href="index-en.html" class="flex items-center gap-2">
+                    <img alt="Franšiza Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI">
+                    <img alt="Franšiza" class="h-6 w-auto ml-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g">
+                </a>
             </div>
-            <div class="hidden md:flex items-center gap-3">
-                    <a href="index.html" class="text-xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
-                    <a href="index-en.html" class="text-xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
-                    <a href="index-de.html" class="text-xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
-                </div>
-                                                <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E] dark:text-[#EAE0D5]">
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="index-en.html">HOME</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="menu-en.html">MENU</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="about-en.html">ABOUT</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="reviews-en.html">REVIEWS</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="contact-en.html">CONTACT</a>
+            </div>
+                        <div class="hidden md:flex items-center gap-3">
+                <a href="index.html" class="text-xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                <a href="index-en.html" class="text-xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                <a href="index-de.html" class="text-xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E]">
                 <span class="material-symbols-outlined text-2xl">menu</span>
             </button>
-        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] dark:bg-[#1A0F07] border-t border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 px-8 py-6 space-y-4">
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index-en.html">HOME</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="menu-en.html">MENU</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="about-en.html">ABOUT</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="reviews-en.html">REVIEWS</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="contact-en.html">CONTACT</a>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] border-t border-[#3B1F0E]/10 px-8 py-6 space-y-4">
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="index-en.html">HOME</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="menu-en.html">MENU</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="about-en.html">ABOUT</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="reviews-en.html">REVIEWS</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="contact-en.html">CONTACT</a>
             <div class="flex items-center justify-center gap-3 py-4 border-t border-outline-variant/20">
-                    <a href="index.html" class="text-2xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
-                    <a href="index-en.html" class="text-2xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
-                    <a href="index-de.html" class="text-2xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
-                </div>
+                <a href="index.html" class="text-2xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                <a href="index-en.html" class="text-2xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                <a href="index-de.html" class="text-2xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+            </div>
         </div>
     </nav>
-
-
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24" id="pocetna">
-        <div class="absolute inset-0 z-0">
-            <img alt="Caffe Franšiza terasa" class="w-full h-full object-cover" src="assets/hero.png">
-            <div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
-        </div>
-        <div class="relative z-10 text-center px-gutter flex flex-col items-center">
-            <h1 class="font-display-xl text-5xl md:text-7xl text-on-primary font-bold mb-4 tracking-tight drop-shadow-md">Franšiza</h1>
-            <div class="w-24 h-[2px] bg-secondary-container mb-6"></div>
-            <p class="font-body-lg text-lg md:text-2xl text-on-primary/95 mb-8 max-w-2xl font-light drop-shadow-sm">Your favorite place in Mirijevo</p>
-            <a class="btn-premium bg-primary-container text-on-primary px-10 py-4 border border-primary-container font-label-caps text-label-caps uppercase tracking-widest hover:bg-transparent hover:text-on-primary hover:border-on-primary rounded-sm" href="menu-en.html">
-                SEE OUR MENU
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="py-24 px-8 max-w-7xl mx-auto" id="o-nama">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="order-2 md:order-1 relative">
-                <img alt="Enterijer Caffe Franšiza" class="w-full h-auto rounded shadow-lg border border-outline-variant/30" src="assets/about.png">
-                <div class="absolute -bottom-6 -right-6 w-2/3 bg-surface-container p-6 rounded shadow-xl border border-outline-variant/30">
-                    <div class="flex items-center gap-2 text-secondary">
-                        <span class="material-symbols-outlined text-2xl icon-filled">star</span>
-                        <span class="font-serif text-3xl font-bold text-on-surface">4.6</span>
-                    </div>
-                    <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">Google Rating</p>
-                </div>
+    <main>
+        <section class="relative min-h-screen flex items-center justify-center pt-24" id="pocetna">
+            <div class="absolute inset-0 z-0">
+                <img alt="Caffe Franšiza terasa" class="w-full h-full object-cover" src="assets/hero.png">
+                <div class="absolute inset-0 backdrop-blur-[1px] bg-primary/20"></div>
             </div>
-            <div class="order-1 md:order-2">
-                <h2 class="font-serif text-3xl md:text-4xl text-on-surface mb-4 font-semibold">About Us</h2>
-                <div class="w-12 h-[2px] bg-secondary mb-6"></div>
-                <p class="font-body-lg text-lg text-on-surface-variant mb-4 leading-relaxed">
-                    Caffe Franchise is your favorite spot in the heart of Mirijevo, Belgrade. We pride ourselves on a modern interior that radiates warmth and offers the perfect atmosphere for relaxing, working, or socializing.
-                </p>
-                <p class="font-body-md text-base text-on-surface-variant mb-8 leading-relaxed">
-                    Enjoy our spacious terrace, use our fast Wi-Fi for your business needs, or relax with our wide selection of drinks from our bar. Our passion for quality and hospitality is reflected in every detail.
-                </p>
-                <div class="flex gap-6 flex-wrap">
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-outline">wifi</span>
-                        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Fast Wi-Fi</span>
+            <div class="relative z-10 text-center px-gutter flex flex-col items-center">
+                <h1 class="font-display-xl text-display-xl text-on-primary mb-sm">Franšiza</h1>
+                <div class="w-24 h-[2px] bg-secondary-container mb-md"></div>
+                <p class="font-body-lg text-body-lg text-on-primary/90 mb-xl max-w-2xl">Your favorite place in Mirijevo</p>
+                <a class="bg-primary-container text-on-primary px-xl py-md rounded-DEFAULT font-label-caps text-label-caps uppercase tracking-widest border border-primary-container hover:bg-transparent hover:text-on-primary hover:border-on-primary transition-all duration-300" href="menu-en.html">SEE OUR MENU</a>
+            </div>
+        </section>
+
+        <section class="py-24 px-gutter max-w-7xl mx-auto" id="o-nama">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1 relative">
+                    <img alt="Enterijer Caffe Franšiza" class="w-full h-auto rounded shadow-lg border border-outline-variant/30" src="assets/about.png">
+                    <div class="absolute -bottom-6 -right-6 w-2/3 bg-surface-container p-6 rounded shadow-xl border border-outline-variant/30">
+                        <div class="flex items-center gap-2 text-secondary">
+                            <span class="material-symbols-outlined text-2xl icon-filled">star</span>
+                            <span class="font-serif text-3xl font-bold text-on-surface">4.6</span>
+                        </div>
+                        <p class="font-label-caps text-label-caps text-on-surface-variant uppercase mt-1">Google Rating</p>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-outline">local_cafe</span>
-                        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Full Bar</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-outline">deck</span>
-                        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Terrace</span>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="font-serif text-3xl md:text-4xl text-on-surface mb-4 font-semibold">About Us</h2>
+                    <div class="w-12 h-[2px] bg-secondary mb-6"></div>
+                    <p class="font-body-lg text-lg text-on-surface-variant mb-4 leading-relaxed">Caffe Franšiza is your favorite spot in the heart of Mirijevo, Belgrade. We pride ourselves on a modern interior that radiates warmth and offers the perfect atmosphere for relaxing, working, or socializing.</p>
+                    <p class="font-body-md text-base text-on-surface-variant mb-8 leading-relaxed">Enjoy our spacious terrace, use our fast Wi-Fi for your business needs, or relax with our wide selection of drinks from our bar. Our passion for quality and hospitality is reflected in every detail.</p>
+                    <div class="flex gap-6 flex-wrap">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-outline">wifi</span>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Fast Wi-Fi</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-outline">local_cafe</span>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Full Bar</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-outline">deck</span>
+                            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Terrace</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#3B1F0E] dark:bg-[#1A0F07] w-full py-16 px-8 border-t border-[#C5A059]/20 transition-colors duration-300">
+        </section>
+    </main>
+    <footer class="bg-[#3B1F0E] w-full py-16 px-8 border-t border-[#C5A059]/20">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
             <div class="flex flex-col items-center md:items-start">
                 <div class="flex items-center gap-2 mb-4 justify-center md:justify-start">
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-10 w-auto">
                     <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-5 w-auto ml-1 bg-black p-0.5 rounded-sm">
                 </div>
-                <p class="text-[#EAE0D5]/60 font-serif text-xs uppercase tracking-widest mt-2">© 2026 CAFFE FRANŠIZA BELGRADE. SVA PRAVA ZADRŽANA.</p>
+                <p class="text-[#EAE0D5]/60 font-serif text-xs uppercase tracking-widest mt-2">© 2026 CAFFE FRANŠIZA BELGRADE. ALL RIGHTS RESERVED.</p>
             </div>
             <div class="flex flex-wrap justify-center gap-6">
                 <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors flex items-center gap-1" href="https://www.instagram.com/caffefransiza/" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 inline-block mr-1 align-middle"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608C4.516 2.497 5.783 2.225 7.15 2.163 8.416 2.105 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 4.977.172 3.19.744 1.855 2.079.52 3.414-.053 5.201.01 7.276-.054 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.1 2.075.672 3.862 2.007 5.197 1.335 1.335 3.122 1.907 5.197 2.007C8.332 24.014 8.741 24 12 24s3.668-.014 4.948-.072c2.075-.1 3.862-.672 5.197-2.007 1.335-1.335 1.907-3.122 2.007-5.197.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.668-.072-4.948-.1-2.075-.672-3.862-2.007-5.197C20.81.744 19.023.172 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>INSTAGRAM</a>
                 <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors flex items-center gap-1" href="https://www.facebook.com/profile.php?id=100054253610923" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 inline-block mr-1 align-middle"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.898v-2.89h2.54V9.845c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33V21.88C18.343 21.128 22 16.991 22 12z"/></svg>FACEBOOK</a>
-                
-                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="kontakt.html">CONTACT</a>
+                <a class="font-label-caps text-[10px] uppercase tracking-[0.2em] text-[#EAE0D5]/60 hover:text-[#C5A059] transition-colors" href="contact-en.html">CONTACT</a>
             </div>
         </div>
     </footer>
-
-    <!-- Shared Javascript -->
     <script src="app.js"></script>
+    <script>
+        (function(){
+            function updateNavHeight(){
+                var nav = document.querySelector('nav');
+                if(!nav) return;
+                var h = nav.getBoundingClientRect().height + 'px';
+                document.documentElement.style.setProperty('--nav-h', h);
+            }
+            window.addEventListener('load', updateNavHeight);
+            window.addEventListener('resize', function(){
+                clearTimeout(window._navResizeTimer);
+                window._navResizeTimer = setTimeout(updateNavHeight, 120);
+            });
+        })();
+    </script>
 </body>
 </html>
