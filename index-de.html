@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffe Franšiza | Startseite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
@@ -79,8 +80,12 @@
                         base: "8px"
                     },
                     fontFamily: {
-                        serif: ["Noto Serif", "Georgia", "serif"],
-                        sans: ["Inter", "system-ui", "sans-serif"]
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "display-xl": ["Noto Serif"],
+                        "body-md": ["Inter"]
                     },
                     fontSize: {
                         "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
@@ -102,11 +107,10 @@
         html { scroll-padding-top: calc(var(--nav-h, 6rem) + 2px); }
         main { padding-top: calc(var(--nav-h, 6rem) + 2px); }
     </style>
-    <title>Caffe Franšiza | Startseite</title>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
     <div class="fixed inset-0 texture-overlay z-40"></div>
-    <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 shadow-sm transition-all duration-300">
+        <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 shadow-sm transition-all duration-300">
         <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
             <div class="text-2xl font-serif font-bold text-[#3B1F0E] tracking-tighter">
                 <a href="index-de.html" class="flex items-center gap-2">
@@ -211,17 +215,16 @@
     <script src="app.js"></script>
     <script>
         (function(){
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if(btn && menu){ btn.addEventListener('click', function(){ menu.classList.toggle('hidden'); }); }
             function updateNavHeight(){
                 var nav = document.querySelector('nav');
                 if(!nav) return;
-                var h = nav.getBoundingClientRect().height + 'px';
-                document.documentElement.style.setProperty('--nav-h', h);
+                document.documentElement.style.setProperty('--nav-h', nav.getBoundingClientRect().height + 'px');
             }
             window.addEventListener('load', updateNavHeight);
-            window.addEventListener('resize', function(){
-                clearTimeout(window._navResizeTimer);
-                window._navResizeTimer = setTimeout(updateNavHeight, 120);
-            });
+            window.addEventListener('resize', function(){ clearTimeout(window._nt); window._nt = setTimeout(updateNavHeight, 120); });
         })();
     </script>
 </body>

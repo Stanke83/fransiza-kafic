@@ -2,14 +2,12 @@
 <html lang="sr">
 <head>
     <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Recenzije | Caffe Franšiza</title>
-    <!-- Google Web Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffe Franšiza | Recenzije</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Serif:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
         tailwind.config = {
@@ -17,69 +15,142 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#220b01",
-                        "primary-container": "#3b1f0e",
-                        secondary: "#7d5700",
-                        "secondary-container": "#fdc664",
-                        background: "#fff8f5",
-                        surface: "#fff8f5",
-                        "surface-container": "#fdeadf",
-                        "surface-container-low": "#fff1e9",
-                        "surface-container-high": "#f7e5d9",
-                        "surface-container-highest": "#f1dfd4",
-                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#edbca3",
+                        "on-tertiary-fixed": "#1c1c19",
                         "on-surface": "#231a13",
-                        "on-surface-variant": "#50443e",
-                        outline: "#82746d",
+                        "surface-container-high": "#f7e5d9",
+                        "on-tertiary-fixed-variant": "#484743",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#edbca3",
+                        "outline": "#82746d",
+                        "surface-container-highest": "#f1dfd4",
+                        "surface-bright": "#fff8f5",
+                        "surface-variant": "#f1dfd4",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#8f8d89",
+                        "tertiary": "#12110f",
+                        "secondary-fixed": "#ffdeab",
+                        "error": "#ba1a1a",
+                        "surface": "#fff8f5",
+                        "background": "#fff8f5",
+                        "surface-container": "#fdeadf",
+                        "on-primary-fixed": "#2e1505",
+                        "on-primary-fixed-variant": "#613f2c",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#e6e2dd",
                         "outline-variant": "#d4c3bb",
+                        "on-primary-container": "#af846d",
+                        "on-secondary-container": "#755100",
+                        "surface-container-low": "#fff1e9",
+                        "secondary-fixed-dim": "#f4be5d",
+                        "on-secondary-fixed-variant": "#5f4100",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#50443e",
+                        "primary-fixed": "#ffdbc9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#271900",
+                        "surface-tint": "#7b5641",
+                        "secondary": "#7d5700",
+                        "inverse-surface": "#392e27",
+                        "primary": "#220b01",
+                        "tertiary-container": "#272623",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#3b1f0e",
+                        "on-background": "#231a13",
+                        "surface-dim": "#e9d7cb",
+                        "secondary-container": "#fdc664",
+                        "inverse-on-surface": "#ffede3",
+                        "tertiary-fixed-dim": "#c9c6c1"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "0.75rem"
+                    },
+                    spacing: {
+                        xl: "80px",
+                        md: "24px",
+                        margin: "64px",
+                        xs: "4px",
+                        lg: "48px",
+                        gutter: "24px",
+                        sm: "12px",
+                        base: "8px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "display-xl": ["Noto Serif"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "600" }],
+                        "headline-md": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "display-xl": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }]
                     }
                 }
             }
         }
     </script>
-    <!-- Shared Stylesheets -->
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
+    </style>
     <link rel="stylesheet" href="style.css">
+    <style>
+        html { scroll-padding-top: calc(var(--nav-h, 6rem) + 2px); }
+        main { padding-top: calc(var(--nav-h, 6rem) + 2px); }
+    </style>
 </head>
-<body class="bg-surface text-on-surface antialiased overflow-x-hidden">
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
     <!-- Texture Overlay -->
     <div class="fixed inset-0 texture-overlay z-40"></div>
 
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 dark:bg-[#1A0F07]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 shadow-sm dark:shadow-none transition-all duration-300">
+        <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 shadow-sm transition-all duration-300">
         <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
-            <a href="index.html" class="flex items-center gap-2">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI" alt="Franšiza Logo" class="h-12 w-auto">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g" alt="Franšiza" class="h-6 w-auto ml-1 bg-black p-0.5 rounded-sm">
-            </a>
-                                                <div class="hidden md:flex gap-8 items-center">
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="recenzije.html">RECENZIJE</a>
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            <div class="text-2xl font-serif font-bold text-[#3B1F0E] tracking-tighter">
+                <a href="index.html" class="flex items-center gap-2">
+                    <img alt="Franšiza Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI">
+                    <img alt="Franšiza" class="h-6 w-auto ml-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g">
+                </a>
             </div>
-            <div class="hidden md:flex items-center gap-3">
-                    <a href="recenzije.html" class="text-xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
-                    <a href="recenzije-en.html" class="text-xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
-                    <a href="recenzije-de.html" class="text-xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
-                </div>
-                        <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E] dark:text-[#EAE0D5]">
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="recenzije.html">RECENZIJE</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+            </div>
+                        <div class="hidden md:flex items-center gap-3">
+                <a href="recenzije.html" class="text-xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                <a href="reviews-en.html" class="text-xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                <a href="reviews-de.html" class="text-xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E]">
                 <span class="material-symbols-outlined text-2xl">menu</span>
             </button>
-        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] dark:bg-[#1A0F07] border-t border-[#3B1F0E]/10 dark:border-[#EAE0D5]/10 px-8 py-6 space-y-4">
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="recenzije.html">RECENZIJE</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] dark:text-[#EAE0D5] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] border-t border-[#3B1F0E]/10 px-8 py-6 space-y-4">
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="index.html">POČETNA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="recenzije.html">RECENZIJE</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
             <div class="flex items-center justify-center gap-3 py-4 border-t border-outline-variant/20">
-                    <a href="recenzije.html" class="text-2xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
-                    <a href="recenzije-en.html" class="text-2xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
-                    <a href="recenzije-de.html" class="text-2xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
-                </div>
+                <a href="recenzije.html" class="text-2xl leading-none hover:opacity-80" aria-label="Srpski">🇷🇸</a>
+                <a href="reviews-en.html" class="text-2xl leading-none hover:opacity-80" aria-label="English">🇬🇧</a>
+                <a href="reviews-de.html" class="text-2xl leading-none hover:opacity-80" aria-label="Deutsch">🇩🇪</a>
+            </div>
         </div>
     </nav>
-
+    <main>
         
 
     <!-- Header Section -->
@@ -276,5 +347,19 @@
 
     <!-- Shared Javascript -->
     <script src="app.js"></script>
+    <script>
+        (function(){
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if(btn && menu){ btn.addEventListener('click', function(){ menu.classList.toggle('hidden'); }); }
+            function updateNavHeight(){
+                var nav = document.querySelector('nav');
+                if(!nav) return;
+                document.documentElement.style.setProperty('--nav-h', nav.getBoundingClientRect().height + 'px');
+            }
+            window.addEventListener('load', updateNavHeight);
+            window.addEventListener('resize', function(){ clearTimeout(window._nt); window._nt = setTimeout(updateNavHeight, 120); });
+        })();
+    </script>
 </body>
 </html>
