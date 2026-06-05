@@ -106,71 +106,59 @@
     <style>
         html { scroll-padding-top: calc(var(--nav-h, 6rem) + 2px); }
         main { padding-top: calc(var(--nav-h, 6rem) + 2px); }
-        .nav-flags img{height:20px;width:auto;display:block}
-        .nav-flags a{display:inline-flex;align-items:center;padding:0 6px}
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
     <div class="fixed inset-0 texture-overlay z-40"></div>
 
-        <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 shadow-sm transition-all duration-300">
-        <div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
-            <div class="text-2xl font-serif font-bold text-[#3B1F0E] tracking-tighter">
-                <a href="index.html" class="flex items-center gap-2">
-                    <img alt="Franšiza Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI">
-                    <img alt="Franšiza" class="h-6 w-auto ml-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g">
-                </a>
-            </div>
+            <nav class="fixed top-0 w-full z-50 bg-[#FFFDF9]/90 backdrop-blur-md border-b border-[#3B1F0E]/10 shadow-sm">
+        <div class="flex justify-between items-center max-w-7xl mx-auto px-6 py-4">
+            <a href="index.html" class="flex items-center gap-2 shrink-0">
+                <img alt="Franšiza Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl40t37LXrDUW3fU6xKz6h7Ghrmex6uWKihAtFpRaD2d9Zqu23TpZ75EedhlqOoyS50baCEHLqu3xZBdQkuSQVnCqO74jFdJ95-ZY2-Uqhp9Z28b8r69Ml5TBmAV_rqPmJqTlTZQC2WQAPmfdGQ5kOCbMx2rBrTIurXgoYvWtz8HJ9xDHZAAosgBOsmvHpMW3pHcMx0pKjN6fzCmiTEwvoo99EATi2IbNocWqx268fIippBTqCs2iOE6wVtmJHYc10vEXelQgGvxDI">
+                <img alt="Franšiza" class="h-6 w-auto ml-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBLKxAej_EULa8qW6UBgq2FCz5XvFvSgMz0Gf4PFkOWjPfJOoF3mjPsaEZfJ_DIegluf6bAo1WOzQbsj1dCDi9uU1GrCTNMiXBHX2XFmFy-yf7692L8iGkGpGflpX_9V3wwvQvCivfbby55cDdb8BmVXzb74kZ8efBnLXNbIe75inDS2NzfHUd8quHPCpMUSzCNjWG5NgVCMlmdMHs7M9CJwW88t6pbrgH6lnhu480MXLh8wjyfvZlxgKqmrFCFIP_Ci6l6ddLIT2g">
+            </a>
             <div class="hidden md:flex gap-8 items-center">
-                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1 hover:opacity-80 transition-opacity" href="index.html">POČETNA</a>
+                <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#C5A059] border-b border-[#C5A059] pb-1" href="index.html">POČETNA</a>
                 <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="meni.html">MENI</a>
                 <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="o-nama.html">O NAMA</a>
                 <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="recenzije.html">RECENZIJE</a>
                 <a class="font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="kontakt.html">KONTAKT</a>
             </div>
             <div class="hidden md:flex items-center gap-2">
-                <a href="index.html" class="leading-none hover:opacity-70 transition-opacity" aria-label="Srpski"><img src="assets/flag-sr.png" alt="Srpski" width="24" height="17" style="object-fit:cover;border-radius:2px;"></a>
-                <a href="index-en.html" class="leading-none hover:opacity-70 transition-opacity" aria-label="English"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="17">
-  <rect width="60" height="30" fill="#012169"/>
-  <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-  <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/>
-  <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
-  <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
-</svg></a>
-                <a href="index-de.html" class="leading-none hover:opacity-70 transition-opacity" aria-label="Deutsch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3" width="24" height="17">
-  <rect width="5" height="3" fill="#000"/>
-  <rect y="1" width="5" height="2" fill="#D00"/>
-  <rect y="2" width="5" height="1" fill="#FFCE00"/>
-</svg></a>
+                <a href="index.html" class="leading-none hover:opacity-70" aria-label="Srpski"><img src="assets/flag-sr.png" alt="Srpski" width="24" height="17" style="object-fit:cover;border-radius:2px;"></a>
+                <a href="index-en.html" class="leading-none hover:opacity-70" aria-label="English"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="17"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg></a>
+                <a href="index-de.html" class="leading-none hover:opacity-70" aria-label="Deutsch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3" width="24" height="17"><rect width="5" height="3" fill="#000"/><rect y="1" width="5" height="2" fill="#D00"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></a>
             </div>
-            <button id="mobile-menu-btn" onclick="(function(){var m=document.getElementById('mobile-menu');if(m)m.classList.toggle('hidden');})()" class="md:hidden text-[#3B1F0E] p-2 rounded hover:bg-black/5 active:bg-black/10 transition-colors" aria-label="Otvori meni" aria-expanded="false">
+            <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E] p-2 z-[100] relative" aria-label="Otvori meni">
                 <span class="material-symbols-outlined text-2xl">menu</span>
             </button>
         </div>
-
-        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] border-t border-[#3B1F0E]/10 px-8 py-6 space-y-4 relative z-[999]">
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">POČETNA</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="meni.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">MENI</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="o-nama.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">O NAMA</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="recenzije.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">RECENZIJE</a>
-            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors" href="kontakt.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')">KONTAKT</a>
-            <div class="flex items-center justify-center gap-3 py-4 border-t border-outline-variant/20">
-                <a href="index.html" class="leading-none hover:opacity-70 transition-opacity" aria-label="Srpski"><img src="assets/flag-sr.png" alt="Srpski" width="24" height="17" style="object-fit:cover;border-radius:2px;"></a>
-                <a href="index-en.html" class="leading-none hover:opacity-70 transition-opacity" aria-label="English"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="17">
-  <rect width="60" height="30" fill="#012169"/>
-  <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-  <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/>
-  <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
-  <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
-</svg></a>
-                <a href="index-de.html" class="leading-none hover:opacity-70 transition-opacity" aria-label="Deutsch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3" width="24" height="17">
-  <rect width="5" height="3" fill="#000"/>
-  <rect y="1" width="5" height="2" fill="#D00"/>
-  <rect y="2" width="5" height="1" fill="#FFCE00"/>
-</svg></a>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FFFDF9] border-t border-[#3B1F0E]/10 px-8 py-6 space-y-4 z-[999] relative">
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors py-1" href="index.html">POČETNA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors py-1" href="meni.html">MENI</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors py-1" href="o-nama.html">O NAMA</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors py-1" href="recenzije.html">RECENZIJE</a>
+            <a class="block font-label-caps text-label-caps uppercase tracking-[0.2em] text-[#3B1F0E] hover:text-[#C5A059] transition-colors py-1" href="kontakt.html">KONTAKT</a>
+            <div class="flex items-center justify-center gap-4 pt-4 border-t border-outline-variant/20">
+                <a href="index.html" class="leading-none hover:opacity-70" aria-label="Srpski"><img src="assets/flag-sr.png" alt="Srpski" width="24" height="17" style="object-fit:cover;border-radius:2px;"></a>
+                <a href="index-en.html" class="leading-none hover:opacity-70" aria-label="English"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="24" height="17"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></svg></a>
+                <a href="index-de.html" class="leading-none hover:opacity-70" aria-label="Deutsch"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 5 3" width="24" height="17"><rect width="5" height="3" fill="#000"/><rect y="1" width="5" height="2" fill="#D00"/><rect y="2" width="5" height="1" fill="#FFCE00"/></svg></a>
             </div>
         </div>
     </nav>
+    <script>
+        (function(){
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            if(btn && menu){
+                btn.addEventListener('click', function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    menu.classList.toggle('hidden');
+                });
+            }
+        })();
+    </script>
 
     <main>
         <section class="relative min-h-screen flex items-center justify-center pt-24" id="pocetna">
