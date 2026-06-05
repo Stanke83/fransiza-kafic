@@ -140,7 +140,7 @@
   <rect y="2" width="5" height="1" fill="#FFCE00"/>
 </svg></a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-[#3B1F0E]">
+            <button id="mobile-menu-btn" onclick="(function(){var m=document.getElementById('mobile-menu');if(m)m.classList.toggle('hidden');})()" class="md:hidden text-[#3B1F0E] p-2 rounded hover:bg-black/5 active:bg-black/10 transition-colors" aria-label="Otvori meni" aria-expanded="false">
                 <span class="material-symbols-outlined text-2xl">menu</span>
             </button>
         </div>
